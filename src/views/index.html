@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <div id="root">
+    <nav>
+      <hgroup>
+        <h1>Pelicaner 网址导航</h1>
+      </hgroup>
+      <hr/>
+      <div>
+        <ul id="websiteGroupListNav">
+          <!-- Websites will be dynamically added here -->
+          <li class="preserve-item">
+            <a href="#">
+              <span>GitHub项目</span>
+            </a>
+          </li>
+          <li class="preserve-item">
+            <a href="/manager">
+              <span>后台管理</span>
+            </a>
+          </li>          
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <ul id="websiteGroupListMain">
+        <li></li>
+      </ul>
+    </main>
+  </div>
+
+  <script>
+    fetch('http://localhost:3000/api/v1/websites')
+      .then(response => response.json())
+      .then(data => {
+        // 渲染 Nav 列表
+        const preservedItems = document.querySelectorAll('.preserve-item');
+        const websiteList = document.getElementById('websiteGroupListNav');
+        websiteList.innerHTML = '';
+        const keys = Object.keys(data.data);
+        for (const key of keys) {
+          const listItem = document.createElement('li');
+          listItem.textContent = key;
+          websiteList.appendChild(listItem);
+        }
+        for (const item of preservedItems) {
+          websiteList.appendChild(item);
+        }
+
+        // 渲染 Main 列表
+        const websiteGroupListMain = document.getElementById('websiteGroupListMain');
+        websiteGroupListMain.innerHTML = '';
+        const websiteData = data.data;
+        const websiteGroups = Object.keys(websiteData);
+
+        for (const group of websiteGroups) {
+          const groupListItem = document.createElement('li');
+          const groupItemName = document.createElement('h2');
+          groupItemName.textContent = group;
+
+          const groupList = document.createElement('ul');
+          const websites = websiteData[group];
+
+          for (const website of websites) {
+            const websiteListItem = document.createElement('li');
+
+            const websiteLink = document.createElement('a');
+            const websiteIcon = document.createElement('img');
+            const websiteTitle = document.createElement('span');
+            websiteIcon.src = `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${website.url}&size=128`;
+            websiteLink.href = website.url;
+            websiteTitle.textContent = website.title;
+
+            websiteLink.appendChild(websiteIcon);
+            websiteLink.appendChild(websiteTitle);
+            websiteListItem.appendChild(websiteLink);
+            groupList.appendChild(websiteListItem);
+          }
+
+          groupListItem.appendChild(groupItemName);
+          groupListItem.appendChild(groupList);
+          websiteGroupListMain.appendChild(groupListItem);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>

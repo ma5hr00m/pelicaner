@@ -1,0 +1,131 @@
+@font-face {
+  font-family: kuaile;
+  src: url(../fonts/ZCOOLKuaiLe-Regular.ttf);
+}
+
+nav {
+  position: relative;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #2a2a2aff;
+}
+
+hgroup {
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  position: relative;
+  width: 100%;
+  color: #eeeeeeff;
+  font-size: large;
+  font-family: sans;
+  font-weight: 400;
+  text-align: justify;
+}
+
+hr {
+  background-color: #404040ff;
+  height: 1px;
+  border: 0;
+}
+
+nav div {
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#websiteGroupListNav {
+  padding: 20px 60px;
+}
+
+#websiteGroupListNav > li {
+  padding: 20px 15px 10px 15px;
+  font-size: small;
+  font-family: sans;
+  color: #808080ff;
+  border-bottom: solid 1px #404040ff;
+}
+
+#websiteGroupListNav > li > a {
+  color: #808080ff;
+}
+
+
+main {
+  position: relative;
+  padding: 30px 60px;
+  flex: 1;
+  background: #f0f0f0ff;
+}
+
+#websiteGroupListMain > li {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#websiteGroupListMain > li:last-child {
+  margin-bottom: 0;
+}
+
+#websiteGroupListMain > li > h2 {
+  font-family: sans;
+  letter-spacing: 4px;
+  font-size: large;
+  font-weight: 400;
+  color: #303030ff;
+  margin-bottom: 15px;
+}
+
+#websiteGroupListMain > li > ul {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+#websiteGroupListMain > li > ul > li {
+  border: solid 1px #c0c0c0ff;
+  flex: 1;
+  max-width: 250px;
+  min-width: 250px;
+  height: 60px;
+  margin: 0 30px 20px 0;
+  display: flex;
+  align-items: center;
+  background: #ffffffff;
+  transition: .2s ease-in-out;
+}
+
+#websiteGroupListMain > li > ul > li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 20px #d0d0d0ff;
+  cursor: pointer;
+}
+
+#websiteGroupListMain > li > ul > li > a {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+#websiteGroupListMain > li > ul > li > a > img {
+  margin: 0 15px;
+  height: 30px;
+  width: 30px;
+}
+
+#websiteGroupListMain > li > ul > li > a > span {
+  color: #404040ff;
+  font-family: sans;
+  font-weight: 400;
+}
