@@ -7,11 +7,11 @@ class WebsiteController {
   
       const groupedWebsites = {};
       websites.forEach((website) => {
-        const { sort, title, url } = website;
+        const { id, title, url, sort, description } = website;
         if (!groupedWebsites[sort]) {
           groupedWebsites[sort] = [];
         }
-        groupedWebsites[sort].push({ title, url });
+        groupedWebsites[sort].push({ id, title, url, description });
       });
   
       ctx.body = {

@@ -9,15 +9,15 @@
   <div id="root">
     <nav>
       <hgroup>
-        <h1>Pelicaner 网址导航</h1>
+        <h1>Pelicaner 导航</h1>
       </hgroup>
       <hr/>
       <div>
         <ul id="websiteGroupListNav">
           <!-- Websites will be dynamically added here -->
           <li class="preserve-item">
-            <a href="#">
-              <span>GitHub项目</span>
+            <a href="https://github.com/ma5hr00m/pelicaner">
+              <span>项目地址</span>
             </a>
           </li>
           <li class="preserve-item">
@@ -47,6 +47,8 @@
         for (const key of keys) {
           const listItem = document.createElement('li');
           listItem.textContent = key;
+          // 添加href属性，指向对应的h2标签的id
+          listItem.innerHTML = `<a href="#${key}">${key}</a>`;
           websiteList.appendChild(listItem);
         }
         for (const item of preservedItems) {
@@ -61,7 +63,9 @@
 
         for (const group of websiteGroups) {
           const groupListItem = document.createElement('li');
+          // 为每个h2标签添加一个id属性
           const groupItemName = document.createElement('h2');
+          groupItemName.id = group;
           groupItemName.textContent = group;
 
           const groupList = document.createElement('ul');

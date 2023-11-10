@@ -26,6 +26,12 @@ module.exports = function(sequelize) {
             allowNull: false,
             isEmpty: false,
             field: 'sort',
+        },
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            isEmpty: false,
+            field: 'description',
         }
     });
 }
