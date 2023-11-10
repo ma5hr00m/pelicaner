@@ -20,20 +20,12 @@
     </nav>
     <div>
       <header>
+        <div id="header-mask" class="header-mask-deactive"></div>
         <div id="search-container">
           <form>
             <ul>
-              <li>
-                <a>谷歌</a>
-              </li>
-              <li>
-                <a>必应</a>
-              </li>
-              <li>
-                <a>百度</a>
-              </li>
             </ul>
-            <input type="text" placeholder="请输入内容"/>
+            <input type="text" placeholder="搜索" onfocus="activeSearchBox()" onblur="activeSearchBox()"/>
           </form>
         </div>
         <div id="quote-container">
@@ -51,5 +43,6 @@
     </div>
   </div>
   <script src="js/initHomepage.js"></script>
+  <script src="js/activeSearchBox.js"></script>
 </body>
 </html>

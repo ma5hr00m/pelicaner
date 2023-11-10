@@ -10,7 +10,9 @@ const viewRoutes = require('./src/routes/routes');
 const app = new Koa();
 
 app.use(bodyParser());
-app.use(cors({ methods: ['GET', 'POST', 'DELETE', 'PUT', 'PATCH'] }));
+app.use(cors({
+  methods: ['GET', 'POST', 'DELETE', 'PUT', 'PATCH']
+}));
 app.use(views(path.join(__dirname,"/src/views/"),{extension:'html'}));
 app.use(staticServe(path.join( __dirname, "/public")));
 app.use(viewRoutes.routes());
