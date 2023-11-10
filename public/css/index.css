@@ -53,6 +53,10 @@ nav div {
   color: #808080ff;
 }
 
+#websiteGroupListNav > li > a:hover {
+  color: #4488ffff;
+}
+
 
 #root > div {
   height: 100%;
@@ -63,8 +67,9 @@ nav div {
 }
 
 header {
+  position: relative;
   padding: 60px 30px;
-  height: 360px;
+  height: 400px;
   flex-shrink: 0;
   display: flex;
   justify-content: center;
@@ -77,22 +82,61 @@ header {
 
 #search-container > form {
   display: flex;
+  flex-direction: column;
+}
+
+#search-container > form > ul {
+  display: flex;
+  height: 40px;
 }
 
 #search-container > form > input[type="text"] {
   width: 1000px;
   min-width: 400px;
-  padding: 15px 30px;
-  font-size: 16px;
-  opacity: .9;
+  padding: 16px 24px;
+  font-size: 14px;
+  opacity: .8;
   background: #101010ff;
   color: #ffffffff;
-  border: 0;
-  border-radius: 5px;
+  border: solid 1px transparent;
+  border-radius: 25px;
+  text-align: center;
+  transition: opacity .2s ease-in-out, border .2s ease-in-out;
 }
 
 #search-container > form > input[type="text"]:focus {
+  opacity: 1;
   outline: none;
+  border: solid 1px #4488ffff;
+}
+
+#quote-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  transform: translateX(-50%);
+  background: #101010ff;
+  border-radius: 30px;
+  border: solid 1px #a0a0a0ff;
+  transition: border .2s ease-in-out;
+}
+
+#quote-container:hover {
+  cursor: pointer;
+  border: solid 1px #4488ffff;
+}
+
+#quote-container > span {
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+#quote-container > quote {
+  color: #ffffffff;
+  font-size: 12px;
 }
 
 
@@ -123,7 +167,7 @@ main {
   letter-spacing: 4px;
   font-size: large;
   font-weight: 600;
-  color: #303030ff;
+  color: #a0a0a0ff;
   margin-bottom: 15px;
 }
 
@@ -150,7 +194,8 @@ main {
 
 #websiteGroupListMain > li > ul > li:hover {
   transform: translateY(-10px);
-  box-shadow: 0 5px 20px #404040ff;
+  border: solid 1px #4488ffff;
+  box-shadow: 0 5px 15px #4488ffaa;
   cursor: pointer;
 }
 
@@ -167,6 +212,7 @@ main {
   margin: 0 15px;
   height: 30px;
   width: 30px;
+  border-radius: 100%;
 }
 
 #websiteGroupListMain > li > ul > li > a > span {
