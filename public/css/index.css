@@ -1,13 +1,9 @@
-@font-face {
-  font-family: kuaile;
-  src: url(../fonts/ZCOOLKuaiLe-Regular.ttf);
-}
-
 nav {
   position: relative;
   width: 240px;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   background-color: #2a2a2aff;
 }
 
@@ -58,12 +54,59 @@ nav div {
 }
 
 
+#root > div {
+  height: 100%;
+  flex: 1;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 60px 30px;
+  height: 360px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/banner.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#search-container > form {
+  display: flex;
+}
+
+#search-container > form > input[type="text"] {
+  width: 1000px;
+  min-width: 400px;
+  padding: 15px 30px;
+  font-size: 16px;
+  opacity: .9;
+  background: #101010ff;
+  color: #ffffffff;
+  border: 0;
+  border-radius: 5px;
+}
+
+#search-container > form > input[type="text"]:focus {
+  outline: none;
+}
+
+
 main {
   position: relative;
-  padding: 30px 60px;
+  padding: 30px;
   flex: 1;
-  background: #f0f0f0ff;
-  overflow: scroll;
+  display: flex;
+  justify-content: center;
+  background: #101010ff;
+}
+
+#websiteGroupListMain {
+  max-width: 1560px;
 }
 
 #websiteGroupListMain > li {
@@ -79,7 +122,7 @@ main {
   font-family: sans;
   letter-spacing: 4px;
   font-size: large;
-  font-weight: 400;
+  font-weight: 600;
   color: #303030ff;
   margin-bottom: 15px;
 }
@@ -92,7 +135,7 @@ main {
 }
 
 #websiteGroupListMain > li > ul > li {
-  border: solid 1px #c0c0c0ff;
+  border: solid 1px #808080ff;
   flex: 1;
   max-width: 240px;
   min-width: 240px;
@@ -100,13 +143,14 @@ main {
   margin: 0 20px 20px 0;
   display: flex;
   align-items: center;
-  background: #ffffffff;
+  border-radius: 5px;
+  background: #2a2a2aff;
   transition: .2s ease-in-out;
 }
 
 #websiteGroupListMain > li > ul > li:hover {
   transform: translateY(-10px);
-  box-shadow: 0 5px 20px #d0d0d0ff;
+  box-shadow: 0 5px 20px #404040ff;
   cursor: pointer;
 }
 
@@ -126,7 +170,7 @@ main {
 }
 
 #websiteGroupListMain > li > ul > li > a > span {
-  color: #404040ff;
+  color: #d0d0d0ff;
   font-family: sans;
-  font-weight: 400;
+  font-weight: 600;
 }
