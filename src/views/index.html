@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo</title>
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/index.css">
@@ -22,11 +24,18 @@
       <header>
         <div id="header-mask" class="header-mask-deactive"></div>
         <div id="search-container">
-          <form>
-            <ul>
-            </ul>
-            <input type="text" placeholder="搜索" onfocus="activeSearchBox()" onblur="activeSearchBox()"/>
-          </form>
+          <form onsubmit="event.preventDefault();">
+            <ul></ul>
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="搜索"
+              onfocus="activeSearchBox()"
+              onblur="activeSearchBox()"
+              onkeydown="handleKeyDown(event)"
+              autocomplete="off"
+            />
+          </form>          
         </div>
         <div id="quote-container">
           <span>🔥</span>
@@ -44,5 +53,6 @@
   </div>
   <script src="js/initHomepage.js"></script>
   <script src="js/activeSearchBox.js"></script>
+  <script src="js/submitSearchForm.js"></script>
 </body>
 </html>
