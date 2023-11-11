@@ -1,12 +1,15 @@
 nav {
+  z-index: 20;
   position: relative;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  background-color: #2a2a2aff;
+  background-color: #202020ff;
   width: 0;
   overflow: hidden;
   transition: width 0.2s;
+  box-shadow: 0 0 10px #00000033;
+  border-right: solid #404040ff;
 }
 
 .expanded {
@@ -34,7 +37,6 @@ nav {
   }
 }
 
-
 hgroup {
   padding: 30px 60px;
   display: flex;
@@ -54,7 +56,7 @@ h1 {
 }
 
 h1:hover {
-color: #4488ffff;
+  color: #4488ffff;
 }
 
 hr {
@@ -313,7 +315,9 @@ main {
   flex: 1;
   display: flex;
   justify-content: center;
-  background: #101010ff;
+  background-color: #101010;
+  background-image: linear-gradient(90deg, #1a1a1a 10%, #00000000 10%), linear-gradient(#1a1a1a 10%, #00000000 10%);
+  background-size: 20px 20px;
 }
 
 #websiteGroupListMain {
@@ -366,7 +370,7 @@ main {
 }
 
 #websiteGroupListMain > li > ul > li {
-  border: solid 1px transparent;
+  border: solid 2px #404040ff;
   border-radius: 5px;
   flex: 1;
   max-width: 240px;
@@ -375,13 +379,13 @@ main {
   margin: 0 20px 20px 0;
   display: flex;
   align-items: center;
-  background: #2a2a2aff;
-  transition: .2s ease-in-out;
+  background: #202020ff;
+  transition: all .2s ease-in-out;
 }
 
 #websiteGroupListMain > li > ul > li:hover {
   transform: translateY(-10px);
-  border: solid 1px #4488ffff;
+  border: solid 2px #4488ffff;
   box-shadow: 0 5px 15px #4488ffaa;
   cursor: pointer;
 }
@@ -408,9 +412,7 @@ main {
   font-weight: 600;
 }
 
-
 /***********************************/
-
 
 footer {
   z-index: 20;
