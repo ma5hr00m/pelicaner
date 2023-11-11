@@ -25,11 +25,28 @@
 - HTML+CSS+JavaScript
 - Koa2+SQLite3
 
-## 预览页面
+## 预览
 
 开发中的 Pelicaner 主页，暂无示范站点。
 
 ![20231111215139](https://agu-img.oss-cn-hangzhou.aliyuncs.com/blog/20231111215139.png)
+
+## 部署
+
+请确保已正确安装相关工具，并保证网络环境畅通。
+
+拉取项目到本地：
+
+```shell
+git clone git@github.com:ma5hr00m/pelicaner.git
+```
+
+进入到该项目跟目录，执行以下 shell 语句：
+
+```shell
+# node@v18.17.1 & pnpm@v8.9.0
+pnpm install && pnpm run dev
+```
 
 ## Todo
 
