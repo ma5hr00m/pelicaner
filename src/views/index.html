@@ -9,9 +9,11 @@
 </head>
 <body>
   <div id="root">
-    <nav>
+    <nav class="expanded">
       <hgroup>
-        <h1>Pelicaner 导航</h1>
+        <a href="/#header">
+          <h1>Pelicaner 导航</h1>
+        </a>
       </hgroup>
       <hr/>
       <div>
@@ -21,7 +23,17 @@
       </div>
     </nav>
     <div>
-      <header>
+      <header id="header">
+        <aside>
+          <a onclick="collapseNavbar()">
+            <img src="images/fold.svg" />
+          </a>
+        </aside>
+        <aside>
+          <a href="/manager">
+            <img src="images/admin.svg" />
+          </a>
+        </aside>
         <div id="header-mask" class="header-mask-deactive"></div>
         <div id="search-container">
           <form onsubmit="event.preventDefault();">
@@ -49,10 +61,14 @@
           <li></li>
         </ul>
       </main>
+      <footer>
+        <p>©2023 ma5hr00m. All rights reserved</p>
+      </footer>
     </div>
   </div>
   <script src="js/initHomepage.js"></script>
   <script src="js/activeSearchBox.js"></script>
   <script src="js/submitSearchForm.js"></script>
+  <script src="js/collapseNavbar.js"></script>
 </body>
 </html>
